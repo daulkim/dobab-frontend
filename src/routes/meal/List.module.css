@@ -1,0 +1,21 @@
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+  
+.meals {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 30px;
+    padding: 50px;
+    width: 80%;
+    padding-top: 70px;
+}
+  
+@media screen and (max-width: 1090px) {
+    .meals {
+      grid-template-columns: 1fr;
+      width: 100%;
+    }
+}
