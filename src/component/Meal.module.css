@@ -27,7 +27,7 @@
 
 .bottom__right span {
   color: white;
-  font-weight: 300px;
+  font-weight: bold;
   padding: 3px;
 }
 
@@ -38,7 +38,7 @@
   justify-content: center;
   bottom: -5px;
   right: 0;
-  background-color: rgb(255, 174, 0);
+  background-color: orange;
   padding: 5px 20px 5px 5px;
   min-width: 80px;
 }

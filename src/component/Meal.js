@@ -2,6 +2,8 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import styles from "./Meal.module.css";
 import { BiTimeFive } from 'react-icons/bi';
+import Moment from 'moment';
+import 'moment/locale/ko';
 
 function Meal({id, title, startDatetime, location, mealTime, categoryImage})  {
 
@@ -9,12 +11,12 @@ function Meal({id, title, startDatetime, location, mealTime, categoryImage})  {
         <div className={styles.meal}>
             <Link to={`/meal/${id}`}>
             <div>
-                <div class={styles.thumbnail__wrapper}>
-                    <div class={styles.thumbnail}>
+                <div className={styles.thumbnail__wrapper}>
+                    <div className={styles.thumbnail}>
                     <img className={styles.meal__img} src={`img/${categoryImage}.jpg`}/>
                     </div>
-                    <div class={styles.bottom__right}>
-                        <BiTimeFive color='white' size={30}/><span>{startDatetime}</span>
+                    <div className={styles.bottom__right}>
+                        <BiTimeFive color='white' size={30}/><span>{Moment(startDatetime).format('A hh:mm')}</span>
                     </div>
                 </div>
                 <div className={styles.text__container}>
