@@ -25,14 +25,13 @@ function Details() {
         <div className={styles.container}>
              {loading ? (
                 <div> <span>Loading...</span> </div> ) :
-                (         
-                <div className={styles.grid__container}>
+                ( <div className={styles.grid__container}>
                     <div className={styles.item}>
                     <h1>[{meal.categoryName}]{meal.title}</h1>
                     <span>{Moment(meal.startDatetime).format('A hh:mm')} | {meal.mealTime}시간 | {meal.location.guName} {meal.location.dongName}</span>
                     </div>
                     <div className={styles.item}>
-                    <span>{meal.contents}같이 점심 드시분 찾습니다.</span>
+                    <span>{meal.contents}</span>
                     </div>
                     <div className={styles.item}>
                         <CgProfile size={80}/>
@@ -42,7 +41,7 @@ function Details() {
                         </div>
                         <button>참여하기</button>
                     </div>
-                </div>)}
+                  </div> )}
                   
         </div>
     );
