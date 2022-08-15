@@ -22,26 +22,37 @@ function Details() {
     }, []);
 
     return (
-        <div className={styles.container}>
+        <div >
              {loading ? (
                 <div> <span>Loading...</span> </div> ) :
-                ( <div className={styles.grid__container}>
-                    <div className={styles.item}>
-                    <h1>[{meal.categoryName}]{meal.title}</h1>
-                    <span>{Moment(meal.startDatetime).format('A hh:mm')} | {meal.mealTime}시간 | {meal.location.guName} {meal.location.dongName}</span>
-                    </div>
-                    <div className={styles.item}>
-                    <span>{meal.contents}</span>
-                    </div>
-                    <div className={styles.item}>
-                        <CgProfile size={80}/>
-                        <p>{meal.userId}</p>
-                        <div className={styles.icon__con}>
-                        <AiFillStar size={20} color="orange"/><span className={styles.icon__span}>4.5</span>
+                (<div className={styles.container}> 
+                    <div className={styles.grid__container}>
+                        <div className={styles.item}>
+                            <h1>[{meal.categoryName}]{meal.title}</h1>
+                            <span>{Moment(meal.startDatetime).format('A hh:mm')} | {meal.location.guName} {meal.location.dongName} | {meal.mealTime}시간 </span>
                         </div>
-                        <button>참여하기</button>
+                        <div className={styles.item}>
+                            <span>{meal.contents}</span>
+                        </div>
+                    </div> 
+                    <div className={styles.bottom}>
+                        <div className={styles.bottom__container}>
+                            <div className={styles.icon__container}>
+                                <div className={styles.icon__item}>
+                                    <CgProfile size={40}/>
+                                    <span>{meal.userId}</span>
+                                </div>
+                                <div className={styles.icon__item}>
+                                    <AiFillStar size={20} color="orange"/><span className={styles.icon__span}>4.5</span>
+                                </div>
+                            </div>
+                            <div>
+                                <button>참여하기</button>
+                            </div>
+                        </div>
                     </div>
-                  </div> )}
+                </div>
+                  )}
                   
         </div>
     );
