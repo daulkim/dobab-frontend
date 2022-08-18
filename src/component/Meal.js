@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import styles from "./Meal.module.css";
 import { BiTimeFive } from 'react-icons/bi';
 import Moment from 'moment';
-import 'moment/locale/ko';
 
 function Meal({id, title, startDatetime, location, mealTime, categoryImage})  {
 
@@ -16,13 +15,13 @@ function Meal({id, title, startDatetime, location, mealTime, categoryImage})  {
                     <img className={styles.meal__img} src={`img/${categoryImage}.jpg`}/>
                     </div>
                     <div className={styles.bottom__right}>
-                        <BiTimeFive color='white' size={30}/><span>{Moment(startDatetime).format('A hh:mm')}</span>
+                        <BiTimeFive color='white' size={30}/><span>{Moment(startDatetime).format('MM/DD A hh:mm')}</span>
                     </div>
                 </div>
                 <div className={styles.text__container}>
                     <p className={styles.meal__title}>{title.length > 15? `${title.slice(0, 15)}...` : title}</p>
                     <p className={styles.meal__content}>
-                        {location.guName} {location.dongName} · {mealTime}시간 소요
+                        {location.guName} {location.dongName} | {mealTime}시간
                     </p>
                     <p className={styles.meal__info}>
                         좋아요 조회수
