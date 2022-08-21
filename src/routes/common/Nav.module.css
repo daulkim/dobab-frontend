@@ -41,3 +41,13 @@ nav {
 .home__link {
   font-size: 30px;
 }
+
+.login__btn {
+  border: 0;
+  background-color: white;
+  color: orange;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+}

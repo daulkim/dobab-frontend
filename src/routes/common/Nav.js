@@ -1,8 +1,12 @@
-import * as React from 'react';
 import styles from "./Nav.module.css";
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import Modal from "./Modal";
+import Login from "../Login";
 
 function Nav()  {
+  const [loginModal, setLoginModal] = useState(false);
+
     return (
       <nav>
         <div className={styles.nav__container}>
@@ -17,9 +21,12 @@ function Nav()  {
             </NavLink>
             </div>
             <div>
-            <NavLink className={styles.other__link} to="/login">
-              로그인
-            </NavLink>
+            <input type="button" className ={styles.login__btn} value="로그인" onClick={() => setLoginModal(!loginModal)}/>
+            {loginModal && (
+              <Modal closeModal={() => setLoginModal(!loginModal)}>
+                <Login />
+              </Modal>
+            )}
           </div>
         </div>
       </nav>
